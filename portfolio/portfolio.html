@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamaidia Mohamed Nassim - Portfolio</title>
+    <style>
+        
+        .contact-form {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: var(--accent);
+            border-radius: 8px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px 15px;
+            margin: 8px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            background: white;
+        }
+
+        .contact-form button {
+            background: var(--secondary);
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 15px;
+            transition: background 0.3s ease;
+        }
+
+        .contact-form button:hover {
+            background: #2980b9;
+        }
+        .profile-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+ }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background: #f0f2f5;
+            padding: 2rem;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        :root {
+            --primary: #2c3e50;     
+            --secondary: #3498db;
+            --accent: #ecf0f1;      
+            --highlight: #e74c3c;   
+        }
+
+        .profile-card {
+            background: white;
+            max-width: 400px;
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+            padding: 2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .profile-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .header {
+            text-align: center;
+            padding-bottom: 1.5rem;
+            border-bottom: 2px solid var(--accent);
+            margin-bottom: 1.5rem;
+        }
+
+        .header h1 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .header p {
+            color: #666;
+            font-size: 0.9rem;
+            margin: 0.3rem 0;
+        }
+
+        #greeting {
+            color: var(--secondary);
+            font-weight: 600;
+            margin: 0.5rem 0;
+            font-size: 1.1rem;
+        }
+
+        .bio-section {
+            margin: 1.5rem 0;
+            padding: 1rem;
+            background: var(--accent);
+            border-radius: 8px;
+            color: var(--primary);
+        }
+
+        .bio-section p {
+            line-height: 1.6;
+            font-size: 0.95rem;
+            color: #555;
+        }
+
+        .bio-section h3 {
+            color: var(--secondary);
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+        }
+
+        .social-links {
+            margin: 1.5rem 0;
+        }
+
+        .social-item {
+            display: flex;
+            align-items: center;
+            padding: 0.8rem;
+            margin: 0.5rem ;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            background: var(--accent);
+        }
+
+        .social-item:hover {
+            background: var(--secondary);
+            color: white;
+            transform: translateX(10px);
+        }
+
+        .social-item i {
+            color: var(--primary);
+            width: 25px;
+            height: 25px;
+        }
+
+        .contact-info {
+            margin: 2rem 0;
+        }
+
+        .contact-item {
+            margin: 1rem 0;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-item strong {
+            color: var(--secondary);
+            margin-right: 0.8rem;
+            min-width: 60px;
+        }
+
+        .skills-section {
+            margin-top: 2rem;
+        }
+
+        .skills-section {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 700px;
+            margin: 30px auto;
+            padding: 25px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 8px;
+            margin-bottom: 25px;
+        }
+        
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        
+        .technical-skills, .personal-qualities {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .skills-list, .qualities-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        .skill-item, .quality-item {
+            margin-bottom: 20px;
+        }
+        
+        .skill-name, .quality-name {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #34495e;
+        }
+        
+        .skill-bar {
+            height: 20px;
+            background-color: #ecf0f1;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .skill-level {
+            height: 100%;
+            background: linear-gradient(90deg, #3498db, #1338e0);
+            border-radius: 10px;
+            text-align: right;
+            padding-right: 8px;
+            color: white;
+            font-size: 12px;
+            line-height: 20px;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.2);
+        }
+        
+        .quality-description {
+            color: #7f8c8d;
+            font-style: italic;
+            padding: 10px;
+            background-color: #fff;
+            border-left: 3px solid #3498db;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        .icon {
+            margin-right: 8px;
+            color: #3498db;
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-card">
+        <div class="header">
+             <img src="profile.jpg" alt="Profile Photo" class="profile-photo">
+            <h1>Hamaidia Mohamed Nassim</h1>
+            <p>Computer Science Student</p>
+            <p>Algiers 1 University,Ben Youssef Ben Khadda</p>
+            <p id="greeting"></p>
+            
+            <div class="social-links">
+                <div class="social-item">
+                    <i class="fab fa-instagram"></i>
+                    <a href="https://www.instagram.com/med_nassim26/#">
+                        med_nassim26</a>
+                </div>
+                <div class="social-item">
+                    <i class="fas fa-envelope"></i>
+                   <a href="mailto:hamaidiamednassim@gmail.com"> hamaidiamednassim@gmail.com</a>
+                </div>
+                <div class="social-item">
+                    <i class="fab fa-linkedin"></i>
+                    <a href="https://www.linkedin.com/in/hamaidia-med-nassim-hamaidia-730807325/">
+                        hamaidia-med-nassim-hamaidia</a>
+                </div>
+            </div>
+
+            <div class="bio-section">
+                <h3>About Me</h3>
+                <p>
+                    Hello, I'm a computer science student with experience in graphic design. I've worked on various projects and my current goal is to combine graphic design with web development. I aim to create websites that are both visually appealing and highly functional, merging design creativity with technical implementation.
+                </p>
+            </div>
+        </div>
+
+        <div class="contact-info">
+            <div class="contact-item">
+                <strong>Email:</strong> HamaidiaMedNassim@gmail.com
+            </div>
+            <div class="contact-item">
+                <strong>Phone:</strong> (213) 665933447
+            </div>
+            <div class="contact-item">
+                <strong>Address:</strong> City 70 Logment Bouzereah, Alger
+            </div>
+        </div>
+
+        <div class="skills-section">
+            <h2>Skills & Qualities</h2>
+            <div class="skills-container">
+                <div class="technical-skills">
+                    <h3>Technical Skills</h3>
+                    <ul class="skills-list">
+                        <li class="skill-item">
+                            <span class="skill-name">Web Development</span>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 44%;">44%</div>
+                            </div>
+                        </li>
+                        <li class="skill-item">
+                            <span class="skill-name">UI/UX Design</span>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 66%;">66%</div>
+                            </div>
+                        </li>
+                        <li class="skill-item">
+                            <span class="skill-name">Graphic Design</span>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 55%;">55%</div>
+                            </div>
+                        </li>
+                        <li class="skill-item">
+                            <span class="skill-name">Data Analysis</span>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 20%;">20%</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="personal-qualities">
+                    <h3>Personal Qualities</h3>
+                    <ul class="qualities-list">
+                        <li class="quality-item">
+                            <span class="quality-name">Work Ethic</span>
+                            <div class="quality-description">
+                                Highly disciplined and committed to delivering quality results through focused effort and attention to detail.
+                            </div>
+                        </li>
+                        <li class="quality-item">
+                            <span class="quality-name">Professionalism</span>
+                            <div class="quality-description">
+                                Reliable, punctual, and dedicated to continuous improvement in all professional engagements.
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="contact-form">
+            <h2>Contact Me</h2>
+            <form id="myForm">
+                <input type="text" id="name" placeholder="Your Name">
+                <input type="email" id="email" placeholder="Your Email">
+                <textarea id="message" placeholder="Your Message" rows="5"></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+
+    <script>
+        // Greeting functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const greeting = document.getElementById('greeting');
+            const hour = new Date().getHours();
+            let message = 'Good evening!';
+            
+            if (hour < 12) message = 'Good morning!';
+            else if (hour < 18) message = 'Good afternoon!';
+            
+            greeting.textContent = message;
+            document.getElementById('myForm').addEventListener('submit', function(e) {
+                const name = document.getElementById('name').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const message = document.getElementById('message').value.trim();
+
+                if (name === '' || email === '' || message === '') {
+                    e.preventDefault();
+                    alert('Please fill out all fields before submitting.');
+        
+    </script>
+    
+    <!-- Font Awesome for icons -->
+    <script src="https://kit.fontawesome.com/your-kit-code.js" crossorigin="anonymous"></script>
+    
+<script>
+    document.getElementById('myForm').addEventListener('submit', function(e) {
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const message = document.getElementById('message').value.trim();
+    
+        if (name === '' || email === '' || message === '') {
+            e.preventDefault();
+            alert('Please fill out all fields before submitting.');
+        }
+    });
+});
+    </script>
+</body>
+</html>
