@@ -1179,7 +1179,7 @@ footer {
 /* Mobile */
 @media (max-width: 768px) {
   :root {
-    --gap-xl: 4rem;
+    --gap-xl: 3rem;
     --gap-lg: 2rem;
   }
 
@@ -1194,6 +1194,23 @@ footer {
 
   #hero {
     padding-top: 80px;
+    padding-bottom: 3rem;
+    text-align: center;
+  }
+
+  .hero-inner {
+    gap: var(--gap-md);
+  }
+
+  .avatar-frame {
+    width: 200px;
+    height: 200px;
+  }
+
+  .available-badge {
+    font-size: 0.72rem;
+    padding: 0.4rem 0.9rem;
+    white-space: normal;
     text-align: center;
   }
 
@@ -1202,6 +1219,7 @@ footer {
   }
 
   .hero-desc {
+    font-size: 1rem;
     margin-left: auto;
     margin-right: auto;
   }
@@ -1214,21 +1232,53 @@ footer {
     justify-content: center;
   }
 
+  .scroll-hint {
+    display: none;
+  }
+
+  .section {
+    padding: var(--gap-xl) 0;
+  }
+
+  .section-inner {
+    padding: 0 1rem;
+  }
+
   .about-gallery {
     grid-template-columns: 1fr;
+  }
+
+  .gallery-main img {
+    max-height: 320px;
+    object-fit: cover;
   }
 
   .gallery-secondary {
     flex-direction: row;
     margin-top: 0;
+    align-items: center;
   }
 
   .gallery-secondary img {
     flex: 1;
+    max-height: 200px;
+    object-fit: cover;
+  }
+
+  .gallery-card {
+    flex-shrink: 0;
+  }
+
+  .project-card-inner {
+    padding: 1.25rem;
   }
 
   .skills-bento {
     grid-template-columns: 1fr;
+  }
+
+  .bento-card {
+    padding: 1.25rem;
   }
 
   .bento-card--primary,
@@ -1249,6 +1299,19 @@ footer {
     gap: 0.25rem;
   }
 
+  .contact-desc {
+    font-size: 0.95rem;
+  }
+
+  .contact-links {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .contact-link {
+    word-break: break-all;
+  }
+
   .footer-inner {
     flex-direction: column;
     text-align: center;
@@ -1257,16 +1320,70 @@ footer {
 }
 
 @media (max-width: 480px) {
-  h1 { font-size: 2.4rem; }
-  h2 { font-size: 1.9rem; }
+  :root {
+    --gap-xl: 2.5rem;
+    --gap-lg: 1.5rem;
+  }
+
+  h1 { font-size: 2.2rem; }
+  h2 { font-size: 1.75rem; }
+
+  .nav-inner {
+    padding: 0 1rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .avatar-frame {
+    width: 160px;
+    height: 160px;
+  }
 
   .btn--large {
     padding: 0.95rem 1.75rem;
     font-size: 0.95rem;
+    width: 100%;
+    justify-content: center;
   }
 
   .project-meta {
     flex-direction: column;
+  }
+
+  .project-card-inner {
+    padding: 1rem;
+  }
+
+  .project-links {
+    flex-direction: column;
+  }
+
+  .project-link {
+    justify-content: center;
+  }
+
+  .outcome-item {
+    gap: 0.125rem;
+  }
+
+  .gallery-secondary {
+    flex-direction: column;
+  }
+
+  .gallery-secondary img {
+    max-height: 160px;
+  }
+
+  .section-inner {
+    padding: 0 0.875rem;
   }
 }
 
